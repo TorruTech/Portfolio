@@ -72,6 +72,10 @@ nav a:hover {
     color: var(--primary-color);
 }
 
+nav a:active {
+    transition-duration: 3s;
+}
+
 
 h2 {
     color: white;
@@ -224,6 +228,7 @@ section button {
     padding: 15px;
     letter-spacing: 1.2px;
     transition-duration: 0.5s;
+    border: none;
 }
 
 section a {
@@ -233,5 +238,83 @@ section a {
 section button:hover {
     transform: scale(1.1);
     transition-duration: 0.5s;
+    box-shadow: 0 0 30px rgb(232, 215, 28);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Define la animación de deslizamiento */
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Aplica la animación al contenido del section */
+.section-content {
+    opacity: 0; /* Empieza invisible */
+    transform: translateX(-100%); /* Empieza fuera de vista, a la izquierda */
+    animation: slideInFromLeft 1s forwards; /* Aplica la animación */
+}
+
+.section-content.visible {
+    animation: slideInFromLeft 1s forwards; /* Aplica la animación cuando se hace visible */
+}
+
 
