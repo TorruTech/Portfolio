@@ -43,5 +43,56 @@ document.addEventListener("DOMContentLoaded", function() {
               }
           });
       });
+
+      const text = "I´m Javier Torrubia";
+      const textElement = document.getElementById("animated-text");
+      let index = 0;
+  
+    function typeWriter() {
+        if (index < text.length) {
+            textElement.innerHTML += text.charAt(index);
+            index++;
+            setTimeout(typeWriter, 130); 
+        }
+    }
+
+
+    function borderIntermittent() {
+        setInterval(() => {
+            if (textElement.style.borderRight === 'none') {
+                textElement.style.borderRight = '.15em solid orange';
+            } else {
+                textElement.style.borderRight = 'none';
+            }
+        }, 500); // Cambia el borde cada 500 ms
+    }
+  
+    typeWriter();
+    borderIntermittent();
+    
+
+    function counterAnimation() {
+        const counter = document.getElementById("counter");
+        let i = 0;
+
+        function updateCounter() {
+            if (i <= 100) {
+                counter.textContent = i;
+                i++;
+                setTimeout(updateCounter, 15); // Ajusta el tiempo de espera a tu gusto
+            }
+        }
+
+        updateCounter();
+    }
+
+    counterAnimation();
+
+
+
+
+
+
+
 });
 

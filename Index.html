@@ -8,17 +8,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
     <title>Portfolio Javier Torrubia</title>
 </head>
-<body>
+<body id="home">
     <nav>
         <div id="header">
             <img src="images/avatar.png" alt="Avatar image">
             <h2>TorruTech</h2>
         </div>
         <div id="navLinks">
-            <a href="">Home</a>
+            <a href="#home">Home</a>
             <a href="#aboutMe">About</a>
             <a href="">Skills</a>
-            <a href="">Resume</a>
+            <a href="#video">Resume</a>
             <a href="">Projects</a>
             <a href="">Contact</a>
         </div>
@@ -26,7 +26,7 @@
     <div id="galaxy">
         <div class="content">
             <h2>Welcome!</h2>
-            <h1>I´m Javier Torrubia</h1>
+            <h1 id="animated-text"></h1>
             <h3>Full stack developer</h3>
             <h4>MORE ABOUT ME</h4>
             <div id="socialMedia">
@@ -41,12 +41,28 @@
         <div id="aboutMe">
             <h1>About Me</h1>
             <p>While working as a food technologist and teaching physics and chemistry in secondary school, I stumbled upon the world of programming. It was a game-changer for me. The logic and endless possibilities of coding captivated me, leading me to dive into this new field. After many tutorials, challenges, and cups of coffee, I became a full-stack developer. Now, I balance my time between teaching, applying my food technology knowledge, and pursuing my passion for programming. Technology drives me, and I'm committed to continually learning and creating in the world of software development.</p>
-
-
             <h2><span style="color: #FFBD39;">+10</span> projects completed</h2>
             <button><a href="https://github.com/TorruTech">VIEW PROJECTS</a></button>
         </div>
     </section>
+    <div id="mountains">
+        <div class="mountainsContent">
+            <h1>I´m <span style="color: #FFBD39;">Available</span> for freelancing</h1>
+            <p>I can build websites, android applications, create robust back-end infrastructure, develop APIs, and optimize existing websites to maximize performance.</p>
+            <button>HIRE ME</button>
+        </div>
+    </div>
+    <div class="video-container" id="video">
+        <video controls>
+            <source src="video/video.mp4" type="video/mp4">
+            Tu navegador no soporta la etiqueta de video.
+        </video>
+    </div>
+    <footer>
+        <h5>© 2024 All rights reserved</h5>
+        <h5>Designed by: <span>Javier Torrubia Pradas</span></h5>
+        <h5>Terms & Conditions | Privacy Policy</h5>
+    </footer>
 </body>
 <script src="scripts.js"></script>
 </html>
