@@ -38,6 +38,12 @@ nav {
     padding-top: 20px;
     z-index: 10;
     padding-bottom: 20px;
+    transition: background-color 3s ease;
+    background-color: transparent; /* O el color de fondo original */
+}
+
+nav.black-bg {
+    background-color: black;
 }
 
 nav img {
@@ -207,7 +213,7 @@ section h1 {
 }
 
 #aboutMe h1 {
-    font-size: 4rem;
+    font-size: 3.2rem;
 }
 
 #aboutMe p {
@@ -218,7 +224,7 @@ section h1 {
     line-height: 1.5;
 }
 
-section button, #mountains button {
+section button, #mountains button, form button {
     width: 170px;
     height: 55px;
     background-color: var(--primary-color);
@@ -235,10 +241,80 @@ section a {
     color: black;
 }
 
-section button:hover, #mountains button:hover {
+section button:hover, #mountains button:hover, form button:hover {
     transform: scale(1.1);
     transition-duration: 0.5s;
     box-shadow: 0 0 30px rgb(232, 215, 28);
+}
+
+#skills {
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 50px;
+}
+
+#skills h1 {
+    font-size: 3.2rem;
+    color: #fff;
+}
+
+#skills h3 {
+    color: #9f9d9d;
+    font-size: 1rem;
+}
+
+#languages {
+    display: grid;
+    grid-template-columns: repeat(2, 600px); /* Dos columnas de 500px cada una */
+    grid-template-rows: repeat(4, auto); /* Cuatro filas */
+    color: white;
+}
+
+#languages h3 {
+    color: white;
+    font-size: 1.2rem;
+    font-family: sans-serif;
+}
+
+.languageBox {
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas de igual tamaño dentro de cada languageBox */
+    align-items: center;
+    padding: 30px;
+    box-sizing: border-box; /* Incluye padding y border en el ancho y alto total */
+}
+
+.titles {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 15px 10px;
+    color: #000;
+}
+
+.barsBg {
+    background-color: #a39c8e;
+    height: 12px;
+    border-radius: 3px;
+}
+
+.bars {
+    background-color: #ffaa00;
+    height: 12px;
+    width: 90%;
+    border-radius: 3px;
+    animation: progress-animation 2s ease-in-out forwards;
+}
+
+@keyframes progress-animation {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 90%; /* Cambia este valor si necesitas diferentes anchos */
+    }
 }
 
 #mountains {
@@ -279,10 +355,61 @@ section button:hover, #mountains button:hover {
     width: 550px;
 }
 
+.form-container {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    background-color: #000;
+}
+
+.form-container h1 {
+    font-size: 3.2rem;
+    color: #fff;
+}
+
+.form-container h3 {
+    color: #c6c1c1;
+    font-size: 1rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+}
+
+input, textarea {
+    width: 100%;
+    margin: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: transparent;
+    border: solid 1px #fff;
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+input:hover, textarea:hover {
+    border: solid 2px #FFBD39;
+}
+
+textarea {
+    height: 200px;
+}
+
+form button {
+    margin-top: 10px;
+}
+
 footer {
     display: flex;
     justify-content: space-evenly;
     padding: 20px;
+    background-color: #2D2B2B;
 }
 
 footer h5 {
@@ -307,10 +434,8 @@ video {
     width: 100%;
     height: auto;
     display: block;
-    opacity: 0.8;
+    opacity: 0.7;
 }
-
-
 
 .typewriter {
     border: 4px solid #000;

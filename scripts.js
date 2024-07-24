@@ -71,28 +71,92 @@ document.addEventListener("DOMContentLoaded", function() {
     borderIntermittent();
     
 
-    function counterAnimation() {
-        const counter = document.getElementById("counter");
-        let i = 0;
+    const skillsSection = document.getElementById('skills');
+    const bars = document.querySelectorAll('.bars');
+    const counters = document.querySelectorAll('.counter');
 
-        function updateCounter() {
-            if (i <= 100) {
-                counter.textContent = i;
-                i++;
-                setTimeout(updateCounter, 15); // Ajusta el tiempo de espera a tu gusto
-            }
-        }
-
-        updateCounter();
+    function isElementInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
     }
 
-    counterAnimation();
+    function animateBars() {
+        bars.forEach((bar, index) => {
+            const progress = parseInt(bar.getAttribute('data-progress'), 10);
+            bar.style.animation = `progress-animation-${index} 2s ease-in-out forwards`;
 
+            let style = document.createElement('style');
+            style.innerHTML = `
+                @keyframes progress-animation-${index} {
+                    0% {
+                        width: 0;
+                    }
+                    100% {
+                        width: ${progress}%;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
 
+            let counter = counters[index];
+            let count = 0;
+            const duration = 2000;
+            const increment = progress / (duration / 10);
 
+            function updateCounter() {
+                count += increment;
+                if (count < progress) {
+                    counter.textContent = `${Math.round(count)}%`;
+                    setTimeout(updateCounter, 10);
+                } else {
+                    counter.textContent = `${progress}%`;
+                }
+            }
 
+            updateCounter();
+        });
+    }
 
+    function onScroll() {
+        if (isElementInViewport(skillsSection)) {
+            animateBars();
+            window.removeEventListener('scroll', onScroll);
+        }
+    }
 
+      // Initial check in case the user has already scrolled to the section
+      if (isElementInViewport(skillsSection)) {
+        animateBars();
+    } else {
+        window.addEventListener('scroll', onScroll);
+    }
 
+    const nav = document.querySelector('nav');
+    const galaxySection = document.getElementById('galaxy');
+    const nextSection = document.querySelector('.section-content');
+
+    function isElementBelowViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return rect.top < 0; // El elemento está fuera del viewport superior
+    }
+
+    function updateNavBackground() {
+        if (isElementBelowViewport(galaxySection)) {
+            nav.classList.add('black-bg');
+        } else {
+            nav.classList.remove('black-bg');
+        }
+    }
+
+    // Initial check
+    updateNavBackground();
+
+    // Update nav background on scroll
+    window.addEventListener('scroll', updateNavBackground);
 });
 
