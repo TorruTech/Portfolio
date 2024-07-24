@@ -455,21 +455,77 @@ video {
     font-size: 2em;
 }
 
+aside {
+    background-color: rgb(60, 57, 57);
+    border: solid 3px black;
+    width: 350px;
+    height: 500px;
+    position: fixed;
+    z-index: 20;
+    right: 30px;
+    bottom: 30%;
+    border-radius: 10px;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
+aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
 
+}
 
+aside h1 {
+    font-size: 2.5rem; /* Ajusta el tamaño según lo necesites */
+    font-weight: bolder;
+    background: linear-gradient(135deg, #ffffff, #312f2f); /* Degradado de colores */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; /* Hace que el color del texto sea transparente */
+}
 
+.question {
+    color: #fff;
+    text-decoration: underline;
+    font-size: 1rem;
+    padding: 5px;
+    transition-duration: 1s;
+    padding-bottom: 30px;
+}
 
+.questionCircle {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
 
+.answers {
+    text-align: justify;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.7s ease; 
+    color: #fff;
+    padding: 0px 10px;
+}
 
+.answers.active {
+    max-height: 180px; 
+    transition: max-height 1.5s ease;
+}
 
+.chevronRight {
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    transition-duration: 0.5s;
+}
 
-
-
-
-
-
-
+.chevronRight.active {
+    transition-duration: 0.5s;
+}
 
 
 
