@@ -457,9 +457,9 @@ video {
 
 aside {
     background-color: rgb(60, 57, 57);
-    border: solid 3px black;
+    border: solid 2px var(--primary-color);
     width: 350px;
-    height: 500px;
+    height: auto;
     position: fixed;
     z-index: 20;
     right: 30px;
@@ -493,7 +493,8 @@ aside h1 {
     font-size: 1rem;
     padding: 5px;
     transition-duration: 1s;
-    padding-bottom: 30px;
+    padding-bottom: 15px;
+    padding-top: 10px;
 }
 
 .questionCircle {
@@ -507,8 +508,10 @@ aside h1 {
     max-height: 0px;
     overflow: hidden;
     transition: max-height 0.7s ease; 
-    color: #fff;
+    color: #ffffff;
     padding: 0px 10px;
+    font-weight: lighter;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .answers.active {

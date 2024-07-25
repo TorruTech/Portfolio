@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function() {
           });
       });
 
-      const text = "I´m Javier Torrubia";
+      const text = "Soy Javier Torrubia";
       const textElement = document.getElementById("animated-text");
       let index = 0;
   
