@@ -1,6 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 :root {
     --primary-color: #FFBD39;
@@ -98,7 +95,7 @@ h2 {
 #galaxy {
     position: relative;
     height: 72vh;
-    background-image: url('images/space.jpg');
+    background-image: url('../images/space.jpg');
     background-size: cover;
     background-position: center;
     margin-top: 0px;
@@ -324,7 +321,7 @@ section button:hover, #mountains button:hover, form button:hover {
 #mountains {
     position: relative;
     height: 72vh;
-    background-image: url('images/mountains.jpg');
+    background-image: url('../images/mountains.jpg');
     background-size: cover;
     background-position: center;
     margin-top: 0px;
